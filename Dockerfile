@@ -24,6 +24,6 @@ WORKDIR /root/TeamUltroid/
 
 # start the bot
 #CMD ["bash", "startup"]
-ENTRYPOINT ["supervisord", "-l", "/root/TeamUltroid/resources/logs/supervisord.log", "-c"]
+#ENTRYPOINT ["supervisord", "-l", "/root/TeamUltroid/resources/logs/supervisord.log", "-c"]
 CMD ["/root/TeamUltroid/resources/configs/supervisordconf"]
 
