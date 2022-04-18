@@ -1,0 +1,5 @@
+[supervisord]
+nodaemon=true
+
+[include]
+files = /root/TeamUltroid/resources/configs/*.conf

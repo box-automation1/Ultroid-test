@@ -10,7 +10,7 @@ ENV TZ=Asia/Kolkata
 
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone \
     # cloning the repo and installing requirements.
-    && git clone https://github.com/TeamUltroid/Ultroid.git /root/TeamUltroid/ \
+    && git clone https://github.com/box-automation1/Ultroid-test.git /root/TeamUltroid/ \
     && pip3 install --no-cache-dir -r root/TeamUltroid/requirements.txt \
     && pip3 install av --no-binary av
 
@@ -21,4 +21,7 @@ RUN if [ ! $RAILWAY_STATIC_URL ]; then pip3 install --no-cache-dir yt-dlp; fi
 WORKDIR /root/TeamUltroid/
 
 # start the bot
-CMD ["bash", "startup"]
+#CMD ["bash", "startup"]
+ENTRYPOINT ["supervisord", "-l", "/root/TeamUltroid/resources/logs/supervisord.log", "-c"]
+CMD ["/root/TeamUltroid/resources/configs/supervisordconf"]
+
