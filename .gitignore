@@ -11,7 +11,6 @@ test*
 /*.jpg
 /*.png
 /*.mp4
-*.log
 target/npmlist.json
 package-lock.json
 
